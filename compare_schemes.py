@@ -23,6 +23,8 @@ def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
     total_usd = total_eth * eth_price_usd
     return total_gas, total_eth, total_usd
 
+# Exit codes:
+# 0 = success
 def main():
     args = parse_args()
     num = args.num_proofs
