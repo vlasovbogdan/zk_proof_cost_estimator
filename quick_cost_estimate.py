@@ -15,7 +15,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
     return p.parse_args()
-
+ "total_eth": round(total_eth, 10),
+            "total_usd": round(total_usd, 4),
+            "per_proof_eth": round(per_proof_eth, 10),
+            "per_proof_usd": round(per_proof_usd, 6),
+        }
 
 def main() -> None:
     args = parse_args()
@@ -24,6 +28,29 @@ def main() -> None:
     gas_per = args.gas_per_proof
     gas_price_gwei = args.gas_price_gwei
     eth_price = args.eth_price_usd
+    if args.json:
+        import json
+        per_proof_eth = total_eth / num
+        per_proof_usd = total_usd / num
+        payload = {
+            "num_proofs": num,
+            "gas_per_proof": gas_per,
+            "gas_price_gwei": gas_price_gwei,
+            "eth_price_usd": eth_price,
+            "total_gas": total_gas,
+            "total_eth": total_eth,
+            "total_usd": total_usd,
+            "per_proof_eth": per_proof_eth,
+            "per_proof_usd": per_proof_usd,
+            "total_eth": round(total_eth, 10),
+            "total_usd": round(total_usd, 4),
+            "per_proof_eth": round(per_proof_eth, 10),
+            "per_proof_usd": round(per_proof_usd, 6),
+        }
+
+        }
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return
 
     total_gas = num * gas_per                     # gas
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
