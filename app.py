@@ -196,8 +196,8 @@ def main() -> None:
             security_bits=args.security_bits,
             hardware_scale=args.hardware_scale,
         )
-    except ValueError as exc:
-        print(f"❌ {exc}")
+      except ValueError as exc:
+        print(f"❌ {exc}", file=sys.stderr)
         raise SystemExit(1)
 
     if args.json:
