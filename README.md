@@ -25,6 +25,13 @@ Concept
 zk_proof_cost_estimator does not connect to a blockchain or any RPC endpoint.  
 Instead it uses simple profiles and formulas to approximate:
 
+## Why this exists
+
+This tool provides quick, offline proof-cost intuition without requiring
+a prover, RPC endpoint, or blockchain node.  
+It is meant for early-stage protocol modeling, documentation, research,
+and fast comparisons between different proving architectures.
+
 - proof count based on transaction count and batch size  
 - effect of security level (128, 192, 256 bits)  
 - rough per proof latency in milliseconds  
