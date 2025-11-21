@@ -2,8 +2,9 @@
 import argparse
 
 def parse_args():
-    p = argparse.ArgumentParser(
-        description="Compare cost of two zk-proof parameter sets."
+     p = argparse.ArgumentParser(
+        description="Compare cost of two zk-proof parameter sets.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("--num-proofs", type=int, required=True,
                    help="Number of proofs to estimate.")
