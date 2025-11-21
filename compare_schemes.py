@@ -18,6 +18,7 @@ def parse_args():
     return p.parse_args()
 
 def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
+    """Return (total_gas, total_eth, total_usd) for a given scheme."""
     total_gas = num_proofs * gas_per_proof
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei->ETH
     total_usd = total_eth * eth_price_usd
