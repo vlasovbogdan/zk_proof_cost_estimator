@@ -11,7 +11,7 @@ The goal is to provide a quick way to reason about how many proofs you might req
 
 
 
-Repository layout
+## Repository layout
 
 There are exactly two files in the repository:
 
