@@ -17,7 +17,12 @@ def parse_args():
                    help="ETH price in USD (e.g. 3200).")
     return p.parse_args()
 
-def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
+def estimate_cost(
+    num_proofs: int,
+    gas_per_proof: int,
+    gas_price_gwei: float,
+    eth_price_usd: float,
+) -> tuple[int, float, float]:
     total_gas = num_proofs * gas_per_proof
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei->ETH
     total_usd = total_eth * eth_price_usd
