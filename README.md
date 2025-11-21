@@ -116,7 +116,7 @@ JSON mode returns a dictionary with keys such as system, systemName, family, sec
 
 
 
-Notes
+## Notes
 
 - All numbers are illustrative. They do not represent real benchmarking data from Aztec, Zama, or any production system.  
 - The model is intentionally simple to make it easy to modify, extend, or embed into other tools.  
