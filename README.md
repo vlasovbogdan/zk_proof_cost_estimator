@@ -121,3 +121,12 @@ Notes
 - All numbers are illustrative. They do not represent real benchmarking data from Aztec, Zama, or any production system.  
 - The model is intentionally simple to make it easy to modify, extend, or embed into other tools.  
 - You can add more proving systems, adjust base costs, or change the scaling logic to align with your own measurements.
+
+### Extending profiles
+
+To add a new proving system profile, you can:
+
+1. Open `app.py`.
+2. Add a new entry to the `SYSTEMS` dictionary with your own `base_ms_per_proof`, `base_usd_per_proof`, and `scaling_factor`.
+3. Re-run the script using `--system <your_key>` to compare your custom profile against the built-in ones.
+
