@@ -100,17 +100,17 @@ Relative hardware factor compared to a baseline reference. Values larger than 1.
 
 
 
-Output
+## Output
 
-Human readable mode shows:
+Human-readable mode shows:
 
-- system name and family  
-- description  
-- number of transactions, batch size, and derived batch count  
-- security level and hardware scaling  
-- per proof time and cost estimates  
-- per transaction time and cost estimates  
-- total time and cost for the scenario  
+- **System name and family**  
+- **Description**  
+- **Number of transactions**, batch size, and derived batch count  
+- **Security level** and **hardware scaling**  
+- **Per-proof** time and cost estimates  
+- **Per-transaction** time and cost estimates  
+- **Total** time and cost for the scenario  
 
 JSON mode returns a dictionary with keys such as system, systemName, family, securityBits, txCount, batchSize, batches, perProofMs, perProofUsd, totalMs, totalUsd, perTxMs, perTxUsd, and volumeFactor.  
 
