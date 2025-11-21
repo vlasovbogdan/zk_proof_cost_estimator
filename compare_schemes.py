@@ -44,8 +44,12 @@ def main():
 
     diff_usd = usd_b - usd_a
     diff_eth = eth_b - eth_a
-    print("\nComparison (B minus A):")
+        diff_gas = gas_b - gas_a
+
+       print("\nComparison (B minus A):")
+    print(f"  Extra gas          : {diff_gas:,} gas")
     print(f"  Extra cost         : {diff_eth:.6f} ETH ≈ ${diff_usd:,.2f}")
+
     if diff_usd > 0:
         print("  => Scheme B is more expensive.")
     elif diff_usd < 0:
