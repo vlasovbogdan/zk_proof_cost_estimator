@@ -158,7 +158,8 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def print_human(summary: Dict[str, Any]) -> None:
+def print_human(summary: Summary) -> None:
+    """Pretty-print a human-readable summary to stdout."""
     print("🧮 zk_proof_cost_estimator")
     print(f"System        : {summary['systemName']} ({summary['system']})")
     print(f"Family        : {summary['family']}")
