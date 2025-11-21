@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-
+GWEI_TO_ETH = 1e-9
 def parse_args():
     p = argparse.ArgumentParser(
         description="Compare cost of two zk-proof parameter sets."
@@ -19,7 +19,7 @@ def parse_args():
 
 def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
     total_gas = num_proofs * gas_per_proof
-    total_eth = total_gas * gas_price_gwei * 1e-9  # gwei->ETH
+       total_eth = total_gas * gas_price_gwei * GWEI_TO_ETH
     total_usd = total_eth * eth_price_usd
     return total_gas, total_eth, total_usd
 
