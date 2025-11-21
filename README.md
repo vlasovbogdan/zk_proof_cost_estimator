@@ -44,9 +44,9 @@ Three built in proving system profiles are included:
 
 
 
-Installation
+## Installation
 
-Requirements:
+### Requirements
 
 - Python 3.10 or newer
 
