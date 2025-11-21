@@ -81,22 +81,22 @@ python app.py 12000 --system aztec --security-bits 256 --json
 
 
 
-Parameters
+## Parameters
 
-tx_count  
-Number of transactions you want to include in your estimate.  
+- **tx_count**  
+  Number of transactions you want to include in your estimate.
 
-system  
-Which proving system profile to use. One of aztec, zama, soundness.  
+- **system**  
+  Which proving system profile to use. One of `aztec`, `zama`, `soundness`.
 
-batch_size  
-How many transactions feed into a single proof or batch.  
+- **batch_size**  
+  How many transactions feed into a single proof or batch.
 
-security_bits  
-Logical security level in bits. The model supports 128, 192, and 256.  
+- **security_bits**  
+  Logical security level in bits. The model supports `128`, `192`, and `256`.
 
-hardware_scale  
-Relative hardware factor compared to a baseline reference. Values larger than 1.0 represent more capable hardware.  
+- **hardware_scale**  
+  Relative hardware factor compared to a baseline reference. Values larger than `1.0` represent more capable hardware.
 
 
 
