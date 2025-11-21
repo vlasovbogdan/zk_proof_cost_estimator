@@ -53,5 +53,6 @@ def main():
     else:
         print("  => Costs are equal.")
 
+# CLI entrypoint
 if __name__ == "__main__":
     main()
