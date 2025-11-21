@@ -21,6 +21,8 @@ def main() -> None:
     args = parse_args()
 
     num = args.num_proofs
+        if num > 10_000_000:
+        print("WARNING: num_proofs is very large; check that this is intentional.")
     gas_per = args.gas_per_proof
     gas_price_gwei = args.gas_price_gwei
     eth_price = args.eth_price_usd
