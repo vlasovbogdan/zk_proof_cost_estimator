@@ -32,15 +32,15 @@ def main():
     gas_a, eth_a, usd_a = estimate_cost(num, args.gas_per_proof_a, gas_price, eth_usd)
     gas_b, eth_b, usd_b = estimate_cost(num, args.gas_per_proof_b, gas_price, eth_usd)
 
-    print("Scheme A:")
-    print(f"  Gas per proof      : {args.gas_per_proof_a:,} gas")
-    print(f"  Total gas (A)      : {gas_a:,} gas")
-    print(f"  Total cost (A)     : {eth_a:.6f} ETH ≈ ${usd_a:,.2f}")
+        print("Scheme A:")
+    print(f"  Gas per proof       : {args.gas_per_proof_a:,} gas")
+    print(f"  Total gas (A)       : {gas_a:,} gas")
+    print(f"  Total cost (A)      : {eth_a:.6f} ETH ≈ ${usd_a:,.2f}")
 
     print("\nScheme B:")
-    print(f"  Gas per proof      : {args.gas-per_proof_b:,} gas")
-    print(f"  Total gas (B)      : {gas_b:,} gas")
-    print(f"  Total cost (B)     : {eth_b:.6f} ETH ≈ ${usd_b:,.2f}")
+    print(f"  Gas per proof       : {args.gas_per_proof_b:,} gas")
+    print(f"  Total gas (B)       : {gas_b:,} gas")
+    print(f"  Total cost (B)      : {eth_b:.6f} ETH ≈ ${usd_b:,.2f}")
 
     diff_usd = usd_b - usd_a
     diff_eth = eth_b - eth_a
