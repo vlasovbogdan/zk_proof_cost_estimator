@@ -7,6 +7,8 @@ from typing import Dict, Any
 
 @dataclass
 class ProvingSystem:
+    """Static profile for a proving system used for rough cost estimation."""
+    key: str
     key: str
     name: str
     family: str
