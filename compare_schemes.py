@@ -23,7 +23,8 @@ def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
     total_usd = total_eth * eth_price_usd
     return total_gas, total_eth, total_usd
 
-def main():
+def main() -> None:
+    """CLI entrypoint to compare two zk-proof gas parameter sets."""
     args = parse_args()
     num = args.num_proofs
     gas_price = args.gas_price_gwei
