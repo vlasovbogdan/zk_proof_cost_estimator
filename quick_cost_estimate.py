@@ -29,7 +29,7 @@ def main() -> None:
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
     total_usd = total_eth * eth_price
 
-    print(f"Number of proofs      : {num}")
+       print(f"Number of proofs      : {num:,}")
     print(f"Gas per proof         : {gas_per:,} gas")
     print(f"Total gas             : {total_gas:,} gas")
     print(f"Gas price             : {gas_price_gwei:.3f} gwei")
