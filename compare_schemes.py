@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Compare the total on-chain cost of two zk-proof gas parameter sets (schemes A and B).
+"""
 import argparse
 
 def parse_args():
