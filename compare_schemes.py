@@ -37,8 +37,8 @@ def main():
     print(f"  Total gas (A)      : {gas_a:,} gas")
     print(f"  Total cost (A)     : {eth_a:.6f} ETH ≈ ${usd_a:,.2f}")
 
-    print("\nScheme B:")
-    print(f"  Gas per proof      : {args.gas-per_proof_b:,} gas")
+      print("\nScheme B:")
+    print(f"  Gas per proof      : {args.gas_per_proof_b:,} gas")
     print(f"  Total gas (B)      : {gas_b:,} gas")
     print(f"  Total cost (B)     : {eth_b:.6f} ETH ≈ ${usd_b:,.2f}")
 
