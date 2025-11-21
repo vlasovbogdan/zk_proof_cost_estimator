@@ -7,10 +7,10 @@ def parse_args():
     )
     p.add_argument("--num-proofs", type=int, required=True,
                    help="Number of proofs to estimate.")
-    p.add_argument("--gas-per-proof-a", type=int, required=True,
-                   help="Gas cost per proof for scheme A.")
-    p.add_argument("--gas-per-proof-b", type=int, required=True,
-                   help="Gas cost per proof for scheme B.")
+     p.add_argument("--gas-per-proof-a", type=int, required=True,
+                   help="Gas per proof for scheme A (verification).")
+      p.add_argument("--gas-per-proof-b", type=int, required=True,
+                   help="Gas per proof for scheme B (verification).")
     p.add_argument("--gas-price-gwei", type=float, required=True,
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
