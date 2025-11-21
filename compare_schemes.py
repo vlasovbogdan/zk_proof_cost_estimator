@@ -52,6 +52,11 @@ def main():
         print("  => Scheme B is cheaper.")
     else:
         print("  => Costs are equal.")
+            "diff": {
+                "delta_eth": diff_eth,
+                "delta_usd": diff_usd,
+                "b_more_expensive": diff_usd > 0,
+            },
 
 if __name__ == "__main__":
     main()
