@@ -182,6 +182,10 @@ def print_human(summary: Dict[str, Any]) -> None:
     print("Total estimate:")
     print(f"  Time        : {summary['totalMs']:.3f} ms")
     print(f"  Cost        : ${summary['totalUsd']:.6f}")
+    print(f"  Time        : {summary['totalMs']:.3f} ms")
+    print(f"  Cost        : ${summary['totalUsd']:.6f}")
+    total_sec = summary['totalMs'] / 1000.0
+    print(f"  Time (sec)  : {total_sec:.3f} s")
 
 
 def main() -> None:
