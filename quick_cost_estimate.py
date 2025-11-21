@@ -14,6 +14,12 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit JSON instead of human-readable text.",
+    )
+
     return p.parse_args()
 
 
@@ -28,6 +34,23 @@ def main() -> None:
     total_gas = num * gas_per                     # gas
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
     total_usd = total_eth * eth_price
+    if args.json:
+        import json
+        per_proof_eth = total_eth / num
+        per_proof_usd = total_usd / num
+        payload = {
+            "num_proofs": num,
+            "gas_per_proof": gas_per,
+            "gas_price_gwei": gas_price_gwei,
+            "eth_price_usd": eth_price,
+            "total_gas": total_gas,
+            "total_eth": total_eth,
+            "total_usd": total_usd,
+            "per_proof_eth": per_proof_eth,
+            "per_proof_usd": per_proof_usd,
+        }
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return
 
     print(f"Number of proofs      : {num}")
     print(f"Gas per proof         : {gas_per:,} gas")
