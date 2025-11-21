@@ -14,6 +14,11 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--per-proof-only",
+        action="store_true",
+        help="Only print per-proof ETH/USD cost and exit."
+    )
     return p.parse_args()
 
 
@@ -28,6 +33,12 @@ def main() -> None:
     total_gas = num * gas_per                     # gas
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
     total_usd = total_eth * eth_price
+    # If user only wants per-proof cost, print and exit
+    if args.per-proof-only:
+        per_proof_eth = total_eth / num
+        per_proof_usd = total_usd / num
+        print(f"{per_proof_eth:.8f} ETH, ${per_proof_usd:.6f}")
+        return
 
     print(f"Number of proofs      : {num}")
     print(f"Gas per proof         : {gas_per:,} gas")
