@@ -31,6 +31,9 @@ def main():
 
     gas_a, eth_a, usd_a = estimate_cost(num, args.gas_per_proof_a, gas_price, eth_usd)
     gas_b, eth_b, usd_b = estimate_cost(num, args.gas_per_proof_b, gas_price, eth_usd)
+    print(f"Number of proofs: {num:,}")
+    print(f"Gas price      : {gas_price:.3f} gwei")
+    print(f"ETH price      : ${eth_usd:,.2f} / ETH\n")
 
     print("Scheme A:")
     print(f"  Gas per proof      : {args.gas_per_proof_a:,} gas")
