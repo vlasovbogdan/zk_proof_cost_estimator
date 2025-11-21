@@ -200,7 +200,7 @@ def main() -> None:
         print(f"❌ {exc}")
         raise SystemExit(1)
 
-    if args.json:
+     if args.json:
         print(json.dumps(summary, indent=2, sort_keys=True))
     else:
         print_human(summary)
