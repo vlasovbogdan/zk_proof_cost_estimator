@@ -6,7 +6,7 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description="Quick zk proof cost estimator (gas + USD)."
     )
-    p.add_argument("--num-proofs", type=int, required=True,
+    p.add_argument("num_proofs", type=int,
                    help="Number of proofs.")
     p.add_argument("--gas-per-proof", type=int, required=True,
                    help="On-chain gas cost per proof (verification, etc.).")
