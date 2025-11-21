@@ -15,6 +15,11 @@ def parse_args():
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--example",
+        action="store_true",
+        help="Show an example invocation and exit.",
+    )
     return p.parse_args()
 
 def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
@@ -25,6 +30,12 @@ def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
 
 def main():
     args = parse_args()
+    if args.example:
+        print("Example:")
+        print("  zk_compare.py --num-proofs 1000 --gas-per-proof-a 450000 --gas-per-proof-b 500000 "
+              "--gas-price-gwei 30 --eth-price-usd 3200")
+        return
+
     num = args.num_proofs
     gas_price = args.gas_price_gwei
     eth_usd = args.eth_price_usd
