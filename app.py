@@ -125,6 +125,12 @@ def parse_args() -> argparse.Namespace:
         type=int,
         help="Number of transactions you plan to prove.",
     )
+        parser.add_argument(
+        "--no-emoji",
+        action="store_true",
+        help="Disable emoji in human-readable output.",
+    )
+
     parser.add_argument(
         "--system",
         choices=list(SYSTEMS.keys()),
@@ -158,8 +164,9 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def print_human(summary: Dict[str, Any]) -> None:
-    print("🧮 zk_proof_cost_estimator")
+def print_human(summary: Summary, emoji: bool = True) -> None:
+    prefix = "🧮 " if emoji else ""
+    print(f"{prefix}zk_proof_cost_estimator")
     print(f"System        : {summary['systemName']} ({summary['system']})")
     print(f"Family        : {summary['family']}")
     print(f"Description   : {summary['description']}")
@@ -202,8 +209,9 @@ def main() -> None:
 
     if args.json:
         print(json.dumps(summary, indent=2, sort_keys=True))
-    else:
-        print_human(summary)
+           else:
+        print_human(summary, emoji=not args.no_emoji)
+
 
 
 if __name__ == "__main__":
