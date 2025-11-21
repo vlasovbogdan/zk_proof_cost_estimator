@@ -14,6 +14,13 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--decimals",
+        type=int,
+        default=6,
+        help="Number of decimal places for ETH amounts (default: 6).",
+    )
+
     return p.parse_args()
 
 
@@ -37,6 +44,7 @@ def main() -> None:
     print("-" * 40)
     print(f"Total cost (ETH)      : {total_eth:.6f} ETH")
     print(f"Total cost (USD)      : ${total_usd:,.2f}")
+    print(f"Total cost (ETH)      : {total_eth:.{args.decimals}f} ETH")
 
 
 if __name__ == "__main__":
