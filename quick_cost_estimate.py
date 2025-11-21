@@ -17,6 +17,9 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
+# Exit codes:
+# 0 = success
+# 1 = invalid input (e.g., negative or zero values)
 def main() -> None:
     args = parse_args()
 
