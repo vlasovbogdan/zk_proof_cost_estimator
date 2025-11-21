@@ -111,6 +111,8 @@ def estimate_cost(
         "volumeFactor": round(volume_factor, 4),
     }
 
+def security_levels_str() -> str:
+    return ", ".join(str(k) for k in sorted(SECURITY_LEVELS.keys()))
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -142,7 +144,7 @@ def parse_args() -> argparse.Namespace:
         type=int,
         choices=sorted(SECURITY_LEVELS.keys()),
         default=128,
-        help="Security level in bits (default: 128).",
+              help=f"Security level in bits (options: {security_levels_str()}; default: 128).",
     )
     parser.add_argument(
         "--hardware-scale",
