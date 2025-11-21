@@ -21,7 +21,7 @@ def main() -> None:
     args = parse_args()
 
     num = args.num_proofs
-    gas_per = args.gas_per_proof
+      gas_per_proof = args.gas_per_proof
     gas_price_gwei = args.gas_price_gwei
     eth_price = args.eth_price_usd
 
