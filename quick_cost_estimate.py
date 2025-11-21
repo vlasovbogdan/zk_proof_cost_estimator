@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+"""
+Quick zk proof cost estimator for on-chain gas + USD cost.
+"""
 import argparse
-
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
