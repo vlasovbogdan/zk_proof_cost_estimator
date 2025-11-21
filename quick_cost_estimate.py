@@ -14,7 +14,7 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
-    return p.parse_args()
+    raise SystemExit(1)
 
 
 def main() -> None:
