@@ -25,6 +25,18 @@ def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
 
 def main():
     args = parse_args()
+        if args.num_proofs <= 0:
+        print("ERROR: --num-proofs must be > 0")
+        raise SystemExit(1)
+    if args.gas_per_proof_a <= 0 or args.gas_per_proof_b <= 0:
+        print("ERROR: gas-per-proof values must be > 0")
+        raise SystemExit(1)
+    if args.gas_price_gwei <= 0:
+        print("ERROR: --gas-price-gwei must be > 0")
+        raise SystemExit(1)
+    if args.eth_price_usd <= 0:
+        print("ERROR: --eth-price-usd must be > 0")
+        raise SystemExit(1)
     num = args.num_proofs
     gas_price = args.gas_price_gwei
     eth_usd = args.eth_price_usd
