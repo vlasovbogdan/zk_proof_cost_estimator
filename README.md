@@ -20,7 +20,7 @@ There are exactly two files in the repository:
 
 
 
-Concept
+## Concept
 
 zk_proof_cost_estimator does not connect to a blockchain or any RPC endpoint.  
 Instead it uses simple profiles and formulas to approximate:
