@@ -3,6 +3,7 @@ import argparse
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for zk gas + USD cost estimation."""
     p = argparse.ArgumentParser(
         description="Quick zk proof cost estimator (gas + USD)."
     )
