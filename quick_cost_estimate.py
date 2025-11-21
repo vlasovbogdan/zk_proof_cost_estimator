@@ -10,8 +10,8 @@ def parse_args() -> argparse.Namespace:
                    help="Number of proofs.")
     p.add_argument("--gas-per-proof", type=int, required=True,
                    help="On-chain gas cost per proof (verification, etc.).")
-    p.add_argument("--gas-price-gwei", type=float, required=True,
-                   help="Gas price in gwei (e.g. 30).")
+      p.add_argument("--gas-price-gwei", type=float, required=True,
+                   help="Gas price in gwei (1 gwei = 1e-9 ETH, e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
     return p.parse_args()
