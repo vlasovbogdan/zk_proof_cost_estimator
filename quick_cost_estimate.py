@@ -37,6 +37,8 @@ def main() -> None:
     print("-" * 40)
     print(f"Total cost (ETH)      : {total_eth:.6f} ETH")
     print(f"Total cost (USD)      : ${total_usd:,.2f}")
+    print()
+    print(f"Summary: {num:,} proofs → {total_eth:.6f} ETH (~{fmt_usd(total_usd)})")
 
 
 if __name__ == "__main__":
