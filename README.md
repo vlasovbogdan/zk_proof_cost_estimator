@@ -59,25 +59,15 @@ Steps:
 
 
 
-Usage
+## Usage
 
 From the root directory of the repository, run:
 
-Estimate using the Aztec style profile:
+**Estimate using the Aztec style profile:**
+
 
 python app.py 10000
 
-Use the Zama style FHE hybrid with higher security and stronger hardware:
-
-python app.py 20000 --system zama --security-bits 192 --hardware-scale 2.0
-
-Use the soundness first system with smaller batches:
-
-python app.py 8000 --system soundness --batch-size 256
-
-Request JSON output for dashboards or scripts:
-
-python app.py 12000 --system aztec --security-bits 256 --json  
 
 
 
