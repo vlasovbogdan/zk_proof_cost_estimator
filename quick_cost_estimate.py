@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+# Requires Python 3.8+ for type hints
 import argparse
+
 
 
 def parse_args() -> argparse.Namespace:
