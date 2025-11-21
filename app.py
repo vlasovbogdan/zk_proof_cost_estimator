@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass, asdict
 from typing import Dict, Any
 
-
+__version__ = "0.1.0"
 @dataclass
 class ProvingSystem:
     key: str
@@ -124,6 +124,12 @@ def parse_args() -> argparse.Namespace:
         "tx_count",
         type=int,
         help="Number of transactions you plan to prove.",
+    )
+        parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="Show program version and exit.",
     )
     parser.add_argument(
         "--system",
