@@ -131,6 +131,12 @@ def parse_args() -> argparse.Namespace:
         default="aztec",
         help="Proving system profile (default: aztec).",
     )
+        parser.add_argument(
+        "--list-systems",
+        action="store_true",
+        help="List available proving system profiles and exit.",
+    )
+
     parser.add_argument(
         "--batch-size",
         type=int,
@@ -186,6 +192,12 @@ def print_human(summary: Dict[str, Any]) -> None:
 
 def main() -> None:
     args = parse_args()
+    if args.list_systems:
+        print("Available proving systems:")
+        for key, ps in SYSTEMS.items():
+            print(f"  {key:10} - {ps.name} [{ps.family}]")
+        raise SystemExit(0)
+
     system = SYSTEMS[args.system]
 
     try:
