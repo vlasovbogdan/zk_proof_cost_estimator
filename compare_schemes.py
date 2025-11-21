@@ -44,8 +44,11 @@ def main():
 
     diff_usd = usd_b - usd_a
     diff_eth = eth_b - eth_a
+        pct_diff = (diff_usd / usd_a * 100.0) if usd_a != 0 else 0.0
+
     print("\nComparison (B minus A):")
-    print(f"  Extra cost         : {diff_eth:.6f} ETH ≈ ${diff_usd:,.2f}")
+        print(f"  Extra cost         : {diff_eth:.6f} ETH ≈ ${diff_usd:,.2f}")
+    print(f"  Percentage diff    : {pct_diff:+.2f}%")
     if diff_usd > 0:
         print("  => Scheme B is more expensive.")
     elif diff_usd < 0:
