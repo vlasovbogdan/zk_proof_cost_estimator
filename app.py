@@ -113,12 +113,13 @@ def estimate_cost(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
+       parser = argparse.ArgumentParser(
         prog="zk_proof_cost_estimator",
         description=(
             "Offline zk/FHE proof cost estimator inspired by Aztec-style zk rollups, "
             "Zama-style FHE hybrids, and soundness-first proving systems."
         ),
+
     )
     parser.add_argument(
         "tx_count",
