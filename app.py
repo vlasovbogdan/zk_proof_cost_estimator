@@ -187,6 +187,7 @@ def print_human(summary: Dict[str, Any]) -> None:
 def main() -> None:
     args = parse_args()
     system = SYSTEMS[args.system]
+    print(f"Using system profile: {system.key} ({system.name})")
 
     try:
         summary = estimate_cost(
