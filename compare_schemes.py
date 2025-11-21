@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description="Compare cost of two zk-proof parameter sets."
     )
