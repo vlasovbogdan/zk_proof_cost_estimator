@@ -33,15 +33,12 @@ Instead it uses simple profiles and formulas to approximate:
 
 Three built in proving system profiles are included:
 
-- aztec  
-  Represents a zk SNARK style privacy rollup with relatively optimized proof systems for private state.
 
-- zama  
-  Represents an FHE heavy system where proving also needs to attest to or compose with encrypted compute pipelines.
-
-- soundness  
-  Represents a system whose circuits are designed around clarity and formal soundness, not just raw proving speed.
-
+| Key       | Family      | Description summary                            |
+|-----------|-------------|------------------------------------------------|
+| `aztec`   | zk-snark    | Privacy-oriented rollup with optimized proving |
+| `zama`    | fhe-hybrid  | FHE-heavy design with proof-attested pipelines |
+| `soundness` | verified-zk | Circuits aimed at clarity and formal soundness |
 
 
 Installation
