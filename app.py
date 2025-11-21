@@ -131,6 +131,13 @@ def parse_args() -> argparse.Namespace:
         default="aztec",
         help="Proving system profile (default: aztec).",
     )
+        parser.add_argument(
+        "--system",
+        choices=list(SYSTEMS.keys()),
+        default="aztec",
+              help=f"Proving system profile (default: aztec). Available: {', '.join(SYSTEMS.keys())}",
+    )
+
     parser.add_argument(
         "--batch-size",
         type=int,
