@@ -34,6 +34,7 @@ def main() -> None:
     print(f"Total gas             : {total_gas:,} gas")
     print(f"Gas price             : {gas_price_gwei:.3f} gwei")
     print(f"ETH price             : ${eth_price:,.2f} / ETH")
+        print()
     print("-" * 40)
     print(f"Total cost (ETH)      : {total_eth:.6f} ETH")
     print(f"Total cost (USD)      : ${total_usd:,.2f}")
