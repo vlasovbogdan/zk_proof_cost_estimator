@@ -42,8 +42,10 @@ def main():
     print(f"  Total gas (B)      : {gas_b:,} gas")
     print(f"  Total cost (B)     : {eth_b:.6f} ETH ≈ ${usd_b:,.2f}")
 
+    # Compare scheme B against scheme A (B - A)
     diff_usd = usd_b - usd_a
     diff_eth = eth_b - eth_a
+
     print("\nComparison (B minus A):")
     print(f"  Extra cost         : {diff_eth:.6f} ETH ≈ ${diff_usd:,.2f}")
     if diff_usd > 0:
