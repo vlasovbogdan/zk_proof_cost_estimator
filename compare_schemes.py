@@ -15,6 +15,11 @@ def parse_args():
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Suppress human-readable output (useful in CI).",
+    )
     return p.parse_args()
 
 def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
@@ -52,6 +57,8 @@ def main():
         print("  => Scheme B is cheaper.")
     else:
         print("  => Costs are equal.")
+    if not args.json and not args.quiet:
+        # all existing print() calls go here
 
 if __name__ == "__main__":
     main()
