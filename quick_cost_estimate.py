@@ -4,7 +4,8 @@ import argparse
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Quick zk proof cost estimator (gas + USD)."
+        description="Quick zk proof cost estimator (gas + USD).",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("--num-proofs", type=int, required=True,
                    help="Number of proofs.")
