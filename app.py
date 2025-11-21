@@ -78,7 +78,7 @@ def estimate_cost(
     sec_factor = SECURITY_LEVELS[security_bits]
 
     # Efficiency improvement/degradation depending on size
-    volume_factor = clamp(system.scaling_factor + (tx_count / 10_000) * 0.02, 0.5, 1.25)
+       volume_factor = clamp(system.scaling_factor + (tx_count / 10_000) * 0.02, 0.5, 1.25)  # noqa: PLR2004
 
     per_proof_ms = system.base_ms_per_proof * sec_factor / hardware_scale
     per_proof_ms *= volume_factor
