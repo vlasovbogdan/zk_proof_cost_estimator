@@ -26,7 +26,8 @@ def main() -> None:
     eth_price = args.eth_price_usd
 
     total_gas = num * gas_per                     # gas
-    total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
+      # gas * (gwei/gas) * (1e-9 ETH / gwei) = ETH
+    total_eth = total_gas * gas_price_gwei * 1e-9
     total_usd = total_eth * eth_price
 
     print(f"Number of proofs      : {num}")
