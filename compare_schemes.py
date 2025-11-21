@@ -41,7 +41,7 @@ def main():
     print(f"  Gas per proof      : {args.gas-per_proof_b:,} gas")
     print(f"  Total gas (B)      : {gas_b:,} gas")
     print(f"  Total cost (B)     : {eth_b:.6f} ETH ≈ ${usd_b:,.2f}")
-
+  print(f"  Percentage diff    : {pct_diff:+.2f}%")
     diff_usd = usd_b - usd_a
     diff_eth = eth_b - eth_a
     print("\nComparison (B minus A):")
