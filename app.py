@@ -55,7 +55,9 @@ SECURITY_LEVELS = {
 
 
 def clamp(x: float, lo: float, hi: float) -> float:
+    """Clamp x into the inclusive range [lo, hi]."""
     return max(lo, min(hi, x))
+
 
 
 def estimate_cost(
