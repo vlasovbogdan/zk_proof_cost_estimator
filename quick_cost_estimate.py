@@ -14,6 +14,12 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--no-color",
+        action="store_true",
+        help="Reserved: disable colored output if colors are added in the future.",
+    )
+
     return p.parse_args()
 
 
