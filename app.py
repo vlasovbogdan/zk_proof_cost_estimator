@@ -187,6 +187,9 @@ def print_human(summary: Dict[str, Any]) -> None:
 def main() -> None:
     args = parse_args()
     system = SYSTEMS[args.system]
+    if args.batch_size <= 0:
+        print("❌ batch_size must be positive.", file=sys.stderr)
+        raise SystemExit(1)
 
     try:
         summary = estimate_cost(
