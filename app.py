@@ -199,7 +199,9 @@ def main() -> None:
     except ValueError as exc:
         print(f"❌ {exc}")
         raise SystemExit(1)
-
+ if args.hardware_scale <= 0:
+        print("❌ hardware_scale must be greater than 0.", file=sys.stderr)
+        raise SystemExit(1)
     if args.json:
         print(json.dumps(summary, indent=2, sort_keys=True))
     else:
