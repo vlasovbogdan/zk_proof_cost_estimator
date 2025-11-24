@@ -58,13 +58,19 @@ def clamp(x: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, x))
 
 
-def estimate_cost(
+def estimate_cost(...
+    """
+    Estimate proving time & cost for a given system and workload.
+
+    All times are in milliseconds and costs in USD-equivalent units.
+    """
+    ...
     system: ProvingSystem,
     tx_count: int,
     batch_size: int,
     security_bits: int,
     hardware_scale: float,
-) -> Dict[str, Any]:
+ ) -> Summary: Dict[str, Any]:
     if tx_count <= 0:
         raise ValueError("tx_count must be positive.")
     if batch_size <= 0:
