@@ -14,11 +14,21 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--example",
+        action="store_true",
+        help="Show an example command and exit.",
+    )
+
     return p.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    if args.example:
+        print("Example:")
+        print("  zk_cost.py --num-proofs 1000 --gas-per-proof 450000 --gas-price-gwei 30 --eth-price-usd 3200")
+        return
 
     num = args.num_proofs
     gas_per = args.gas_per_proof
