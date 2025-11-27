@@ -28,6 +28,9 @@ def main() -> None:
     total_gas = num * gas_per                     # gas
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
     total_usd = total_eth * eth_price
+    if not args.json and not args.quiet:
+        print("=== zk proof on-chain cost estimate ===")
+        print()
 
     print(f"Number of proofs      : {num}")
     print(f"Gas per proof         : {gas_per:,} gas")
