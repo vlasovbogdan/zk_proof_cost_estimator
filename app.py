@@ -144,6 +144,13 @@ def parse_args() -> argparse.Namespace:
         default=128,
         help="Security level in bits (default: 128).",
     )
+        parser.add_argument(
+        "--hardware-scale",
+        type=float,
+        default=1.0,
+              help="Relative hardware scale factor; >1 for faster hardware, <1 for slower (default: 1.0).",
+    )
+
     parser.add_argument(
         "--hardware-scale",
         type=float,
