@@ -51,7 +51,7 @@ SYSTEMS: Dict[str, ProvingSystem] = {
 }
 
 
-SECURITY_LEVELS = {
+SECURITY_LEVELS: Dict[int, float] = {
     128: 1.0,
     192: 1.35,
     256: 1.70,
