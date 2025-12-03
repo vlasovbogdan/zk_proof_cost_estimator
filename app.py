@@ -5,7 +5,7 @@ zk_proof_cost_estimator — offline cost & latency estimator for different zk/FH
 import json
 from dataclasses import dataclass
 from typing import Dict, Any
-
+Summary = Dict[str, Any]
 
 @dataclass
 class ProvingSystem:
@@ -60,13 +60,13 @@ def clamp(x: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, x))
 
 
-def estimate_cost(
+def estimate_cost( 
     system: ProvingSystem,
     tx_count: int,
     batch_size: int,
     security_bits: int,
     hardware_scale: float,
-) -> Dict[str, Any]:
+) -> Summary:Dict[str, Any]:
     if tx_count <= 0:
         raise ValueError("tx_count must be positive.")
     if batch_size <= 0:
@@ -160,7 +160,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def print_human(summary: Dict[str, Any]) -> None:
+def print_human(summary: Summary) -> None:
     print("🧮 zk_proof_cost_estimator")
     print(f"System        : {summary['systemName']} ({summary['system']})")
     print(f"Family        : {summary['family']}")
