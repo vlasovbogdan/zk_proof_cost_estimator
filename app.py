@@ -3,7 +3,7 @@
 zk_proof_cost_estimator — offline cost & latency estimator for different zk/FHE proving profiles.
 """
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from typing import Dict, Any
 
 
