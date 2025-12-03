@@ -191,6 +191,10 @@ def print_human(summary: Summary) -> None:
 
 def main() -> None:
     args = parse_args()
+        if args.tx_count <= 0:
+        print("❌ tx_count must be positive.", flush=True)
+        raise SystemExit(1)
+
     system = SYSTEMS[args.system]
 
     try:
