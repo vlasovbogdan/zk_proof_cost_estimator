@@ -215,5 +215,6 @@ def main() -> None:
         print_human(summary)
 
 
+# CLI entrypoint
 if __name__ == "__main__":
     main()
