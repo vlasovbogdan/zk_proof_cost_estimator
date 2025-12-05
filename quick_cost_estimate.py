@@ -14,6 +14,12 @@ def parse_args() -> argparse.Namespace:
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+        p.add_argument(
+        "--fail-if-over-usd",
+        type=float,
+        help="Exit with code 2 if total cost in USD exceeds this threshold.",
+    )
+
     return p.parse_args()
 
 
@@ -28,6 +34,9 @@ def main() -> None:
     total_gas = num * gas_per                     # gas
     total_eth = total_gas * gas_price_gwei * 1e-9  # gwei -> ETH
     total_usd = total_eth * eth_price
+    if args.fail_if_over_usd is not None and total_usd > args.fail_if_over_usd:
+        print(f"WARNING: total cost ${total_usd:,.2f} exceeds threshold ${args.fail_if_over_usd:,.2f}")
+        raise SystemExit(2)
 
     print(f"Number of proofs      : {num}")
     print(f"Gas per proof         : {gas_per:,} gas")
