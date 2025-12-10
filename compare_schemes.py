@@ -28,6 +28,10 @@ def main():
     num = args.num_proofs
     gas_price = args.gas_price_gwei
     eth_usd = args.eth_price_usd
+if not args.num_proofs:
+    raise ValueError("Number of proofs is required.")
+if args.gas_per_proof_a <= 0 or args.gas_per_proof_b <= 0:
+    raise ValueError("Gas per proof must be greater than 0.")
 
     gas_a, eth_a, usd_a = estimate_cost(num, args.gas_per_proof_a, gas_price, eth_usd)
     gas_b, eth_b, usd_b = estimate_cost(num, args.gas_per_proof_b, gas_price, eth_usd)
