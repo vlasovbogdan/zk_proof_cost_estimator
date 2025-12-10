@@ -15,6 +15,7 @@ def parse_args():
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+    p.add_argument("--json", action="store_true", help="Output the result in JSON format")
     return p.parse_args()
 
 def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
@@ -52,6 +53,27 @@ def main():
         print("  => Scheme B is cheaper.")
     else:
         print("  => Costs are equal.")
+import json
+if args.json:
+    print(json.dumps({
+        "Scheme A": {
+            "Gas per proof": args.gas_per_proof_a,
+            "Total gas": gas_a,
+            "Total cost (ETH)": eth_a,
+            "Total cost (USD)": usd_a
+        },
+        "Scheme B": {
+            "Gas per proof": args.gas_per_proof_b,
+            "Total gas": gas_b,
+            "Total cost (ETH)": eth_b,
+            "Total cost (USD)": usd_b
+        },
+        "Comparison": {
+            "Extra cost (ETH)": diff_eth,
+            "Extra cost (USD)": diff_usd
+        }
+    }, indent=4))
+    return
 
 if __name__ == "__main__":
     main()
