@@ -162,6 +162,8 @@ def parse_args() -> argparse.Namespace:
     )
     return parser.parse_args()
 
+    print("")
+    print("=== zk proof cost estimate ===")
 
 def print_human(summary: Summary) -> None:
     print("🧮 zk_proof_cost_estimator")
