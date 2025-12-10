@@ -15,6 +15,11 @@ def parse_args():
                    help="Gas price in gwei (e.g. 30).")
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
+    if args.gas_price_gwei <= 0:
+    raise ValueError("Gas price must be a positive number.")
+if args.eth_price_usd <= 0:
+    raise ValueError("ETH price must be a positive number.")
+
     return p.parse_args()
 
 def estimate_cost(num_proofs, gas_per_proof, gas_price_gwei, eth_price_usd):
