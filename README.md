@@ -1,4 +1,21 @@
 # zk_proof_cost_estimator
+## Summary
+
+The current README is minimal. For a tool that estimates zero‑knowledge proof costs — which is especially relevant for complex cryptographic systems — users will benefit from clear documentation: what the tool does, what assumptions it makes, and how to use it.
+
+## Proposed Changes
+
+- At the top of README.md add an **Overview / Purpose** section describing the goal of zk_proof_cost_estimator.  
+- Add a **What it estimates** section: e.g. proving time, resource usage, gas/verification cost model (if applicable), assumptions (hardware, proof system, constants).  
+- Add a **Quickstart / Usage Example** section with sample commands and expected output.  
+- Document dependencies (e.g. Python version, external libraries), how to install, and how to run the tool.  
+- Optionally, add a “Limitations & Assumptions” sub‑section describing what the estimator does *and does not* guarantee.  
+
+## Motivation
+
+- Lowers barrier to entry for new users.  
+- Clarifies scope and limitations, preventing misunderstandings or misuse.  
+- Improves project professionalism, readability, and maintainability.  
 
 This repository contains a tiny offline estimator for proving costs in Web3-style systems.  
 It focuses on architectures inspired by:
