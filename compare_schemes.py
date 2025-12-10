@@ -7,6 +7,7 @@ def parse_args():
     )
     p.add_argument("--num-proofs", type=int, required=True,
                    help="Number of proofs to estimate.")
+    p.add_argument("--verbose", action="store_true", help="Print detailed output")
     p.add_argument("--gas-per-proof-a", type=int, required=True,
                    help="Gas cost per proof for scheme A.")
     p.add_argument("--gas-per-proof-b", type=int, required=True,
@@ -41,6 +42,8 @@ def main():
     print(f"  Gas per proof      : {args.gas-per_proof_b:,} gas")
     print(f"  Total gas (B)      : {gas_b:,} gas")
     print(f"  Total cost (B)     : {eth_b:.6f} ETH ≈ ${usd_b:,.2f}")
+if args.verbose:
+    print(f"Verbose mode enabled: Showing detailed information.")
 
     diff_usd = usd_b - usd_a
     diff_eth = eth_b - eth_a
