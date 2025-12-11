@@ -13,6 +13,11 @@ def parse_args():
                    help="Gas cost per proof for scheme B.")
     p.add_argument("--gas-price-gwei", type=float, required=True,
                    help="Gas price in gwei (e.g. 30).")
+        p.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit JSON summary instead of human-readable text.",
+    )
     p.add_argument("--eth-price-usd", type=float, required=True,
                    help="ETH price in USD (e.g. 3200).")
     return p.parse_args()
@@ -31,6 +36,31 @@ def main():
 
     gas_a, eth_a, usd_a = estimate_cost(num, args.gas_per_proof_a, gas_price, eth_usd)
     gas_b, eth_b, usd_b = estimate_cost(num, args.gas_per_proof_b, gas_price, eth_usd)
+    if args.json:
+        import json
+        payload = {
+            "num_proofs": num,
+            "gas_price_gwei": gas_price,
+            "eth_price_usd": eth_usd,
+            "scheme_a": {
+                "gas_per_proof": args.gas_per_proof_a,
+                "total_gas": gas_a,
+                "total_eth": eth_a,
+                "total_usd": usd_a,
+            },
+            "scheme_b": {
+                "gas_per_proof": args.gas_per_proof_b,
+                "total_gas": gas_b,
+                "total_eth": eth_b,
+                "total_usd": usd_b,
+            },
+            "diff": {
+                "delta_eth": diff_eth,
+                "delta_usd": diff_usd,
+            },
+        }
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return
 
     print("Scheme A:")
     print(f"  Gas per proof      : {args.gas_per_proof_a:,} gas")
