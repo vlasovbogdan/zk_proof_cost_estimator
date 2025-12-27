@@ -206,7 +206,7 @@ def main() -> None:
             hardware_scale=args.hardware_scale,
         )
     except ValueError as exc:
-        print(f"❌ {exc}")
+              print(f"[zk_proof_cost_estimator] ❌ {exc}", file=sys.stderr)
         raise SystemExit(1)
 
     if args.json:
