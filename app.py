@@ -81,7 +81,8 @@ def estimate_cost(
     batches = (tx_count + batch_size - 1) // batch_size
     sec_factor = SECURITY_LEVELS[security_bits]
 
-    # Efficiency improvement/degradation depending on size
+      # Efficiency improvement/degradation depending on volume:
+    # more transactions push volume_factor slightly up/down, then clamp.
     volume_factor = clamp(system.scaling_factor + (tx_count / 10_000) * 0.02, 0.5, 1.25)
 
     per_proof_ms = system.base_ms_per_proof * sec_factor / hardware_scale
